@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta de Presentación - Victoria Carolina</title>
+  <title>Cartas de Presentación</title>
 
   <!-- Fuentes de Google -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
 
   <!-- Hoja de estilos separada -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
     <ul class="navbar-menu">
-      <li><a href="index.html">Victoria</a></li>
-      <li><a href="#jose">Jose</a></li>
+      <li><a href="#victoria" data-pagina="victoria">Victoria</a></li>
+      <li><a href="#jose" data-pagina="jose">Jose</a></li>
     </ul>
   </nav>
 
@@ -27,7 +29,8 @@
   <div class="burbuja b3"></div>
   <div class="burbuja b4"></div>
 
-  <!-- Card de presentación -->
+  <!-- Carta de Victoria -->
+  <div class="pagina" id="victoria">
   <div class="card">
 
     <div class="card-header">
@@ -92,36 +95,12 @@
 
     </div>
 
-    <!-- Sección oculta: Victoria Carolina (aparece al dar clic en el navbar) -->
-    <section id="victoria" class="seccion-victoria" hidden>
-      <h2>Victoria Carolina</h2>
-      <p>Aquí va el contenido de esta sección. Cámbialo por lo que quieras mostrar.</p>
-    </section>
-
+  </div>
   </div>
 
-  <!-- Script del navbar (al final, después de la sección) -->
-  <script>
-    const seccionVictoria = document.getElementById('victoria');
-
-    document.getElementById('link-victoria').addEventListener('click', (e) => {
-      e.preventDefault();
-      seccionVictoria.hidden = false;
-      seccionVictoria.scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
-
-</body>
-</html>
-  <title>Jose Guadalupe Medrano Rivera</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-
-
-  <article class="card" id="jose">
+  <!-- Carta de Jose -->
+  <div class="pagina" id="jose" hidden>
+  <article class="card-jose">
     <img class="card__cover" src="assets/img/zl1-amarillo.jpg" alt="Chevrolet Camaro ZL1 amarillo">
 
     <div class="card__body">
@@ -144,6 +123,26 @@
       </div>
     </div>
   </article>
+  </div>
+
+  <script>
+    const paginas = document.querySelectorAll('.pagina');
+    const links = document.querySelectorAll('[data-pagina]');
+
+    function mostrar(id) {
+      if (!document.getElementById(id)) id = 'victoria';
+      paginas.forEach(p => p.hidden = p.id !== id);
+      window.scrollTo(0, 0);
+    }
+
+    links.forEach(a => a.addEventListener('click', e => {
+      e.preventDefault();
+      history.replaceState(null, '', '#' + a.dataset.pagina);
+      mostrar(a.dataset.pagina);
+    }));
+
+    mostrar(location.hash.slice(1));
+  </script>
 
 </body>
 </html>
