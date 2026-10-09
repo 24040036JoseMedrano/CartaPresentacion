@@ -15,7 +15,7 @@
     </ul>
   </nav>
 
-  <article class="card" id="jose" hidden>
+  <article class="card" id="jose">
     <img class="card__cover" src="assets/img/zl1-amarillo.jpg" alt="Chevrolet Camaro ZL1 amarillo">
 
     <div class="card__body">
@@ -39,13 +39,5 @@
     </div>
   </article>
 
-  <script>
-    const carta = document.getElementById('jose');
-    document.querySelector('.navbar a').addEventListener('click', (e) => {
-      e.preventDefault();
-      carta.hidden = false;
-      carta.scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
 </body>
 </html>
