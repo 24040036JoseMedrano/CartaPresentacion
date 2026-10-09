@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta de Presentación - Victoria Carolina</title>
+
+  <!-- Fuentes de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos separada -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">Victoria 💙</a>
+    <ul class="navbar-menu">
+      <li><a href="index.html">Victoria</a></li>
+    </ul>
+  </nav>
+
+  <!-- Burbujas del fondo -->
+  <div class="burbuja b1"></div>
+  <div class="burbuja b2"></div>
+  <div class="burbuja b3"></div>
+  <div class="burbuja b4"></div>
+
+  <!-- Card de presentación -->
+  <div class="card">
+
+    <div class="card-header">
+      <p class="saludo">¡Hola! Yo soy</p>
+      <h1 class="nombre">Victoria Carolina</h1>
+      <p class="subtitulo">Creativa · Desarrolladora · Amante del azul 💙</p>
+    </div>
+
+    <div class="avatar">VC</div>
+
+    <div class="card-body">
+
+      <p class="presentacion">
+        Soy una persona creativa a la que le encanta imaginar, diseñar y
+        convertir ideas en algo real, ya sea con un lápiz sobre papel o con
+        código en la pantalla. Me gusta aprender cosas nuevas cada día y
+        ponerle mi toque personal a todo lo que hago.
+      </p>
+
+      <h2 class="seccion-titulo">✨ Sobre mí</h2>
+      <ul class="lista">
+        <li>Mi color favorito es el <strong>azul</strong>, en todos sus tonos.</li>
+        <li>🎨 Me encanta <strong>dibujar</strong> y expresar mis ideas a través del arte.</li>
+        <li>Soy <strong>creativa</strong> y siempre busco nuevas formas de hacer las cosas.</li>
+        <li>Estudio <strong>Desarrollo de Software Multiplataforma</strong>.</li>
+      </ul>
+
+      <h2 class="seccion-titulo">🛠️ Lo que sé hacer</h2>
+      <div class="chips">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">PHP</span>
+        <span class="chip">SQL Server</span>
+        <span class="chip">Soporte técnico</span>
+        <span class="chip">Redes</span>
+        <span class="chip">Diseño</span>
+      </div>
+
+      <h2 class="seccion-titulo">🌟 Mis pasatiempos</h2>
+      <div class="chips">
+        <span class="chip">Dibujar</span>
+        <span class="chip">Crear páginas web</span>
+        <span class="chip">Música</span>
+        <span class="chip">Aprender cosas nuevas</span>
+      </div>
+
+      <h2 class="seccion-titulo"> Mis azules favoritos</h2>
+      <div class="paleta">
+        <div class="color c1" title="Azul marino"></div>
+        <div class="color c2" title="Azul rey"></div>
+        <div class="color c3" title="Azul cielo"></div>
+        <div class="color c4" title="Azul bebé"></div>
+        <div class="color c5" title="Azul hielo"></div>
+      </div>
+
+      <p class="frase">
+        "La creatividad es la inteligencia divirtiéndose."
+      </p>
+
+      <p class="firma">— Victoria 💙</p>
+
+    </div>
+
+    <!-- Sección oculta: Victoria Carolina (aparece al dar clic en el navbar) -->
+    <section id="victoria" class="seccion-victoria" hidden>
+      <h2>Victoria Carolina</h2>
+      <p>Aquí va el contenido de esta sección. Cámbialo por lo que quieras mostrar.</p>
+    </section>
+
+  </div>
+
+  <!-- Script del navbar (al final, después de la sección) -->
+  <script>
+    const seccionVictoria = document.getElementById('victoria');
+
+    document.getElementById('link-victoria').addEventListener('click', (e) => {
+      e.preventDefault();
+      seccionVictoria.hidden = false;
+      seccionVictoria.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
